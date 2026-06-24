@@ -1,0 +1,49 @@
+name: Suggest a tutorial
+description: Propose a build-from-scratch security tutorial to add to the list
+title: "[Suggestion]: "
+labels: [suggestion]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a tutorial. Entries must teach building the thing from scratch with real code, and be a written tutorial or course, not a bare code repository, library, or tool walkthrough.
+  - type: input
+    id: url
+    attributes:
+      label: Link
+      description: URL of the tutorial
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      description: Which section it belongs in (for example Fuzzer, Debugger, Honeypot), or "new category"
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      placeholder: C, C++, Rust, Go, Python, Assembly, ...
+    validations:
+      required: true
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: It qualifies
+      options:
+        - label: It is live and freely accessible, no paywall
+          required: true
+        - label: It teaches building the thing from scratch, not using a prebuilt tool or library
+          required: true
+        - label: It is a written tutorial or course with real code, not a bare code repository
+          required: true
+        - label: If offensive, it is framed for authorized testing, CTFs, or defensive learning
+          required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Why is this a strong from-scratch resource?
